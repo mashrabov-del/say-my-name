@@ -3,34 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bb.css">
+     <link rel="stylesheet" href="/banner.css">
     <title>Breaking Bad - Say My Name</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 380px;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+        img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            border: 2px solid #444;
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus {
+            border-color: #7bf265;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 15px;
+            min-height: 24px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <img src="/images.jfif" alt="Breaking Bad">
+        <!-- Rasm internetdan olindi, shuning uchun xatolik bermaydi -->
+        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=500&q=80" alt="Breaking Bad">
         <input type="text" id="nameInput" placeholder="say my name...">
-        <!-- Natija chiqadigan joy -->
         <h2 id="resultText"></h2>
     </div>
 
-    <!-- JavaScript qismi -->
     <script>
         const input = document.getElementById('nameInput');
         const result = document.getElementById('resultText');
 
         input.addEventListener('keydown', function(event) {
-            // Agar Enter tugmasi bosilsa
             if (event.key === 'Enter') {
                 let value = input.value.trim().toLowerCase();
-                
-                // Agar kiritilgan so'z "heisenberg" bo'lsa
                 if (value === 'heisenberg') {
                     result.textContent = "You are goddamn right.";
-                    result.style.color = "#7bf265"; // Yashil rang
+                    result.style.color = "#7bf265";
                 } else {
                     result.textContent = "You're wrong. Try again!";
-                    result.style.color = "#eb4f11"; // Qizg'ish rang
+                    result.style.color = "#eb4f11";
                 }
             }
         });
