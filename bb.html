@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bb.css">
+    <title>breaking bad</title>
+</head>
+<body>
+    <div>
+        <img src="images.jfif" alt="Breaking Bad">
+        <input type="text" id="nameInput" placeholder="say my name...">
+        <!-- Natija chiqadigan joy -->
+        <h2 id="resultText"></h2>
+    </div>
+
+    <!-- JavaScript qismi -->
+    <script>
+        const input = document.getElementById('nameInput');
+        const result = document.getElementById('resultText');
+
+        input.addEventListener('keydown', function(event) {
+            // Agar Enter tugmasi bosilsa
+            if (event.key === 'Enter') {
+                let value = input.value.trim().toLowerCase();
+                
+                // Agar kiritilgan so'z "heisenberg" bo'lsa
+                if (value === 'heisenberg') {
+                    result.textContent = "You are goddamn right.";
+                    result.style.color = "#7bf265"; // Yashil rang
+                } else {
+                    result.textContent = "You're wrong. Try again!";
+                    result.style.color = "#eb4f11"; // Qizg'ish rang
+                }
+            }
+        });
+    </script>
+</body>
+</html>
